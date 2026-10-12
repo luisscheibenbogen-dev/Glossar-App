@@ -120,9 +120,18 @@ formular.addEventListener("submit", async function(event) {
 
 formular.reset();
 
-setTimeout(async function() {
+// Glossar nach dem Speichern mehrmals aktualisieren
+let versuche = 0;
+
+const aktualisierung = setInterval(async function() {
+  versuche++;
+
   await datenLaden();
-}, 2000);
+
+  if (versuche >= 10) {
+    clearInterval(aktualisierung);
+  }
+}, 3000);
   } catch (fehler) {
     meldung.textContent =
       "Fehler beim Senden. Bitte erneut versuchen.";
