@@ -9,7 +9,9 @@ let begriffe = [];
 // Daten aus Google Sheets laden
 async function datenLaden() {
     try {
-        const response = await fetch(sheetURL);
+        const response = await fetch(sheetURL + "&_=" + Date.now(), {
+  cache: "no-store"
+});
         const text = await response.text();
 
         begriffe = csvVerarbeiten(text);
