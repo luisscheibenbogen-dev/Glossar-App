@@ -16,7 +16,7 @@ async function datenLaden() {
 
         begriffe = csvVerarbeiten(text);
 
-        anzeigen(begriffe);
+        glossarFiltern();
 
     } catch (fehler) {
         console.error("Fehler beim Laden:", fehler);
