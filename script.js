@@ -71,17 +71,31 @@ function anzeigen(liste) {
     });
 }
 
-<label for="kategorieFilter">Nach Kategorie filtern:</label>
+// Suchfunktion und Kategorie-Filter
+const kategorieFilter = document.getElementById("kategorieFilter");
 
-<select id="kategorieFilter">
-  <option value="">Alle Kategorien</option>
-  <option value="Allgemein">Allgemein</option>
-  <option value="Informatik">Informatik</option>
-  <option value="Wirtschaft">Wirtschaft</option>
-  <option value="Mathematik">Mathematik</option>
-  <option value="Naturwissenschaften">Naturwissenschaften</option>
-  <option value="Sonstiges">Sonstiges</option>
-</select>
+function glossarFiltern() {
+    const suchtext = suche.value.toLowerCase().trim();
+    const ausgewaehlteKategorie = kategorieFilter.value;
+
+    const ergebnis = begriffe.filter(begriff => {
+        const passtZurSuche =
+            begriff.name.toLowerCase().includes(suchtext) ||
+            begriff.definition.toLowerCase().includes(suchtext) ||
+            begriff.kategorie.toLowerCase().includes(suchtext);
+
+        const passtZurKategorie =
+            ausgewaehlteKategorie === "" ||
+            begriff.kategorie === ausgewaehlteKategorie;
+
+        return passtZurSuche && passtZurKategorie;
+    });
+
+    anzeigen(ergebnis);
+}
+
+suche.addEventListener("input", glossarFiltern);
+kategorieFilter.addEventListener("change", glossarFiltern);
 
 // Beim Start Daten laden
 datenLaden();
