@@ -105,7 +105,6 @@ formular.addEventListener("submit", async function(event) {
   daten.append("begriff", begriff);
   daten.append("erklaerung", erklaerung);
   const kategorie = document.getElementById("neueKategorie").value;
-
 daten.append("kategorie", kategorie);
   meldung.textContent = "Wird gespeichert …";
 
