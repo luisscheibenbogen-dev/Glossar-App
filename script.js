@@ -113,9 +113,14 @@ formular.addEventListener("submit", async function(event) {
       body: daten
     });
 
-    meldung.textContent =
-      "Anfrage gesendet! Bitte prüfe den Eintrag in Google Sheets.";
+   meldung.textContent =
+  "Anfrage gesendet! Der Begriff wird gleich neu geladen.";
 
+formular.reset();
+
+setTimeout(async function() {
+  await datenLaden();
+}, 2000);
   } catch (fehler) {
     meldung.textContent =
       "Fehler beim Senden. Bitte erneut versuchen.";
