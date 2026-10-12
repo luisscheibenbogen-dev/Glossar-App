@@ -85,3 +85,39 @@ suche.addEventListener("input", function() {
 
 // Beim Start Daten laden
 datenLaden();
+// Neue Begriffe in Google Sheets speichern
+
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbzCvfhJ0Vbb0PO4IqphQc1y7M73WeCOrqTgg5f7fBqCqyKBjdeNL6jLxbAxdREn4HJv1Q/exec";
+
+const formular = document.getElementById("begriffForm");
+
+formular.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const begriff = document.getElementById("neuerBegriff").value.trim();
+  const erklaerung = document.getElementById("neueErklaerung").value.trim();
+  const meldung = document.getElementById("meldung");
+
+  const daten = new URLSearchParams();
+  daten.append("begriff", begriff);
+  daten.append("erklaerung", erklaerung);
+  daten.append("kategorie", "Allgemein");
+
+  meldung.textContent = "Wird gespeichert …";
+
+  try {
+    await fetch(scriptURL, {
+      method: "POST",
+      mode: "no-cors",
+      body: daten
+    });
+
+    meldung.textContent =
+      "Anfrage gesendet! Bitte prüfe den Eintrag in Google Sheets.";
+
+  } catch (fehler) {
+    meldung.textContent =
+      "Fehler beim Senden. Bitte erneut versuchen.";
+  }
+});
