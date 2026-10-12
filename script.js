@@ -71,19 +71,17 @@ function anzeigen(liste) {
     });
 }
 
-// Suchfunktion
-suche.addEventListener("input", function() {
+<label for="kategorieFilter">Nach Kategorie filtern:</label>
 
-    const suchtext = suche.value.toLowerCase();
-
-    const ergebnis = begriffe.filter(begriff =>
-        begriff.name.toLowerCase().includes(suchtext) ||
-        begriff.definition.toLowerCase().includes(suchtext) ||
-        begriff.kategorie.toLowerCase().includes(suchtext)
-    );
-
-    anzeigen(ergebnis);
-});
+<select id="kategorieFilter">
+  <option value="">Alle Kategorien</option>
+  <option value="Allgemein">Allgemein</option>
+  <option value="Informatik">Informatik</option>
+  <option value="Wirtschaft">Wirtschaft</option>
+  <option value="Mathematik">Mathematik</option>
+  <option value="Naturwissenschaften">Naturwissenschaften</option>
+  <option value="Sonstiges">Sonstiges</option>
+</select>
 
 // Beim Start Daten laden
 datenLaden();
