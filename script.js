@@ -104,8 +104,9 @@ formular.addEventListener("submit", async function(event) {
   const daten = new URLSearchParams();
   daten.append("begriff", begriff);
   daten.append("erklaerung", erklaerung);
-  daten.append("kategorie", "Allgemein");
+  const kategorie = document.getElementById("neueKategorie").value;
 
+daten.append("kategorie", kategorie);
   meldung.textContent = "Wird gespeichert …";
 
   try {
