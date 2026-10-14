@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,147 +18,124 @@
     </header>
 
     <main>
-<div class="obererBereich">
-  <div class="suchBereich">
-        <input
-            type="text"
-            id="suche"
-            placeholder="Begriff suchen..."
-        >
-<label for="kategorieFilter">Nach Kategorie filtern:</label>
-<input
-  type="text"
-  id="kategorieSuche"
-  placeholder="Kategorie suchen..."
->
-<select id="kategorieFilter">
-  <option value="">Alle Kategorien</option>
-  <option value="Allgemein">Allgemein</option>
-  <option value="Informatik">Informatik</option>
-  <option value="Wirtschaft">Wirtschaft</option>
-  <option value="Mathematik">Mathematik</option>
-  <option value="Naturwissenschaften">Naturwissenschaften</option>
-  <option value="Physik">Physik</option>
-  <option value="Chemie">Chemie</option>
-  <option value="Biologie">Biologie</option>
-  <option value="Geschichte">Geschichte</option>
-  <option value="Geografie">Geografie</option>
-  <option value="Politik">Politik</option>
-  <option value="Deutsch">Deutsch</option>
-  <option value="Englisch">Englisch</option>
-  <option value="Technik">Technik</option>
-  <option value="Medizin">Medizin</option>
-  <option value="Recht">Recht</option>
-  <option value="Psychologie">Psychologie</option>
-  <option value="Philosophie">Philosophie</option>
-  <option value="Kunst">Kunst</option>
-  <option value="Musik">Musik</option>
-  <option value="Sport">Sport</option>
-  <option value="Sonstiges">Sonstiges</option>
-</select>
-        h2>Neuen Begriff hinzufügen</h2>
 
-<form id="begriffForm">
+        <!-- Oberer Bereich mit zwei Spalten -->
+        <div class="obererBereich">
 
-  <input
-    type="text"
-    id="neuerBegriff"
-    placeholder="Begriff eingeben"
-    required
-  >
+            <!-- LINKE SPALTE: Suche und Filter -->
+            <div class="suchBereich">
 
-  <label for="neueKategorie">Kategorie auswählen:</label>
+                <h2>Begriffe suchen</h2>
 
-  <select id="neueKategorie" required>
-    <option value="">Bitte auswählen</option>
-    <option value="Allgemein">Allgemein</option>
-    <option value="Informatik">Informatik</option>
-    <option value="Wirtschaft">Wirtschaft</option>
-    <option value="Mathematik">Mathematik</option>
-    <option value="Naturwissenschaften">Naturwissenschaften</option>
-    <option value="Physik">Physik</option>
-    <option value="Chemie">Chemie</option>
-    <option value="Biologie">Biologie</option>
-    <option value="Geschichte">Geschichte</option>
-    <option value="Geografie">Geografie</option>
-    <option value="Politik">Politik</option>
-    <option value="Deutsch">Deutsch</option>
-    <option value="Englisch">Englisch</option>
-    <option value="Technik">Technik</option>
-    <option value="Medizin">Medizin</option>
-    <option value="Recht">Recht</option>
-    <option value="Psychologie">Psychologie</option>
-    <option value="Philosophie">Philosophie</option>
-    <option value="Kunst">Kunst</option>
-    <option value="Musik">Musik</option>
-    <option value="Sport">Sport</option>
-    <option value="Sonstiges">Sonstiges</option>
-  </select>
+                <input
+                    type="text"
+                    id="suche"
+                    placeholder="Begriff suchen..."
+                >
 
-  <textarea
-    id="neueErklaerung"
-    placeholder="Erklärung eingeben"
-    required
-  ></textarea>
+                <label for="kategorieFilter">
+                    Nach Kategorie filtern:
+                </label>
 
-  <button type="submit">
-    Begriff speichern
-  </button>
+                <input
+                    type="text"
+                    id="kategorieSuche"
+                    placeholder="Kategorie suchen..."
+                >
 
-</form></div><div id="glossar"></div>
+                <select id="kategorieFilter">
+                    <option value="">Alle Kategorien</option>
+                    <option value="Allgemein">Allgemein</option>
+                    <option value="Informatik">Informatik</option>
+                    <option value="Wirtschaft">Wirtschaft</option>
+                    <option value="Mathematik">Mathematik</option>
+                    <option value="Naturwissenschaften">Naturwissenschaften</option>
+                    <option value="Physik">Physik</option>
+                    <option value="Chemie">Chemie</option>
+                    <option value="Biologie">Biologie</option>
+                    <option value="Geschichte">Geschichte</option>
+                    <option value="Geografie">Geografie</option>
+                    <option value="Politik">Politik</option>
+                    <option value="Deutsch">Deutsch</option>
+                    <option value="Englisch">Englisch</option>
+                    <option value="Technik">Technik</option>
+                    <option value="Medizin">Medizin</option>
+                    <option value="Recht">Recht</option>
+                    <option value="Psychologie">Psychologie</option>
+                    <option value="Philosophie">Philosophie</option>
+                    <option value="Kunst">Kunst</option>
+                    <option value="Musik">Musik</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Sonstiges">Sonstiges</option>
+                </select>
 
-<h2>Neuen Begriff hinzufügen</h2>
+            </div>
 
-<form id="begriffForm">
+            <!-- RECHTE SPALTE: Neuen Begriff hinzufügen -->
+            <div class="formularBereich">
 
-  <input
-    type="text"
-    id="neuerBegriff"
-    placeholder="Begriff eingeben"
-    required
-  >
+                <h2>Neuen Begriff hinzufügen</h2>
 
-  <label for="neueKategorie">Kategorie auswählen:</label>
+                <form id="begriffForm">
 
-  <select id="neueKategorie" required>
-    <option value="">Bitte auswählen</option>
-    <option value="Allgemein">Allgemein</option>
-    <option value="Informatik">Informatik</option>
-    <option value="Wirtschaft">Wirtschaft</option>
-    <option value="Mathematik">Mathematik</option>
-    <option value="Naturwissenschaften">Naturwissenschaften</option>
-    <option value="Physik">Physik</option>
-    <option value="Chemie">Chemie</option>
-    <option value="Biologie">Biologie</option>
-    <option value="Geschichte">Geschichte</option>
-    <option value="Geografie">Geografie</option>
-    <option value="Politik">Politik</option>
-    <option value="Deutsch">Deutsch</option>
-    <option value="Englisch">Englisch</option>
-    <option value="Technik">Technik</option>
-    <option value="Medizin">Medizin</option>
-    <option value="Recht">Recht</option>
-    <option value="Psychologie">Psychologie</option>
-    <option value="Philosophie">Philosophie</option>
-    <option value="Kunst">Kunst</option>
-    <option value="Musik">Musik</option>
-    <option value="Sport">Sport</option>
-    <option value="Sonstiges">Sonstiges</option>
-  </select>
+                    <input
+                        type="text"
+                        id="neuerBegriff"
+                        placeholder="Begriff eingeben"
+                        required
+                    >
 
-  <textarea
-    id="neueErklaerung"
-    placeholder="Erklärung eingeben"
-    required
-  ></textarea>
+                    <label for="neueKategorie">
+                        Kategorie auswählen:
+                    </label>
 
-  <button type="submit">
-    Begriff speichern
-  </button>
+                    <select id="neueKategorie" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="Allgemein">Allgemein</option>
+                        <option value="Informatik">Informatik</option>
+                        <option value="Wirtschaft">Wirtschaft</option>
+                        <option value="Mathematik">Mathematik</option>
+                        <option value="Naturwissenschaften">Naturwissenschaften</option>
+                        <option value="Physik">Physik</option>
+                        <option value="Chemie">Chemie</option>
+                        <option value="Biologie">Biologie</option>
+                        <option value="Geschichte">Geschichte</option>
+                        <option value="Geografie">Geografie</option>
+                        <option value="Politik">Politik</option>
+                        <option value="Deutsch">Deutsch</option>
+                        <option value="Englisch">Englisch</option>
+                        <option value="Technik">Technik</option>
+                        <option value="Medizin">Medizin</option>
+                        <option value="Recht">Recht</option>
+                        <option value="Psychologie">Psychologie</option>
+                        <option value="Philosophie">Philosophie</option>
+                        <option value="Kunst">Kunst</option>
+                        <option value="Musik">Musik</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Sonstiges">Sonstiges</option>
+                    </select>
 
-</form>
+                    <textarea
+                        id="neueErklaerung"
+                        placeholder="Erklärung eingeben"
+                        required
+                    ></textarea>
 
-<p id="meldung"></p>
+                    <button type="submit">
+                        Begriff speichern
+                    </button>
+
+                </form>
+
+                <p id="meldung"></p>
+
+            </div>
+
+        </div>
+
+        <!-- Glossarbegriffe unter den beiden Spalten -->
+        <div id="glossar"></div>
+
     </main>
 
     <script src="script.js"></script>
