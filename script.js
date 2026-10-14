@@ -127,9 +127,9 @@ function glossarFiltern() {
             begriff.kategorie.toLowerCase().includes(suchtext);
 
         const passtZurKategorie =
-            ausgewaehlteKategorie === "" ||
-            begriff.kategorie === ausgewaehlteKategorie;
-
+    ausgewaehlteKategorie === "" ||
+    begriff.kategorie.trim().toLowerCase() ===
+    ausgewaehlteKategorie.toLowerCase();
         return passtZurSuche && passtZurKategorie;
     });
 
