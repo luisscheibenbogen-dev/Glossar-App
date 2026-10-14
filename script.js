@@ -73,7 +73,77 @@ function anzeigen(liste) {
 
 // Suchfunktion und Kategorie-Filter
 const kategorieFilter = document.getElementById("kategorieFilter");
+const kategorieSuche = document.getElementById("kategorieSuche");
 
+// Alle vorhandenen Kategorien merken
+const alleKategorien = Array.from(kategorieFilter.options).map(option => ({
+    value: option.value,
+    text: option.textContent
+}));
+
+// Kategorien im Dropdown durchsuchen
+kategorieSuche.addEventListener("input", function() {
+    const suchtext = kategorieSuche.value.toLowerCase().trim();
+    const bisherigeKategorie = kategorieFilter.value;
+
+    kategorieFilter.innerHTML = "";
+
+    alleKategorien.forEach(kategorie => {
+        if (
+            kategorie.value === "" ||
+            kategorie.text.toLowerCase().includes(suchtext)
+        ) {
+            const option = document.createElement("option");
+            option.value = kategorie.value;
+            option.textContent = kategorie.text;
+            kategorieFilter.appendChild(option);
+        }
+    });
+
+    // Bisherige Auswahl behalten, falls sie noch sichtbar ist
+    const nochVorhanden = Array.from(kategorieFilter.options)
+        .some(option => option.value === bisherigeKategorie);
+
+    kategorieFilter.value = nochVorhanden ? bisherigeKategorie : "";
+
+    // Glossar aktualisieren
+    glossarFiltern();
+});const kategorieSuche = document.getElementById("kategorieSuche");
+
+// Alle vorhandenen Kategorien merken
+const alleKategorien = Array.from(kategorieFilter.options).map(option => ({
+    value: option.value,
+    text: option.textContent
+}));
+
+// Kategorien im Dropdown durchsuchen
+kategorieSuche.addEventListener("input", function() {
+    const suchtext = kategorieSuche.value.toLowerCase().trim();
+    const bisherigeKategorie = kategorieFilter.value;
+
+    kategorieFilter.innerHTML = "";
+
+    alleKategorien.forEach(kategorie => {
+        if (
+            kategorie.value === "" ||
+            kategorie.text.toLowerCase().includes(suchtext)
+        ) {
+            const option = document.createElement("option");
+            option.value = kategorie.value;
+            option.textContent = kategorie.text;
+            kategorieFilter.appendChild(option);
+        }
+    });
+
+    // Bisherige Auswahl behalten, falls sie noch sichtbar ist
+    const nochVorhanden = Array.from(kategorieFilter.options)
+        .some(option => option.value === bisherigeKategorie);
+
+    kategorieFilter.value = nochVorhanden ? bisherigeKategorie : "";
+
+    // Glossar aktualisieren
+    glossarFiltern();
+});
 function glossarFiltern() {
     const suchtext = suche.value.toLowerCase().trim();
     const ausgewaehlteKategorie = kategorieFilter.value;
